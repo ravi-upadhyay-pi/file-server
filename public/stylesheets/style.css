@@ -1,0 +1,115 @@
+
+body {
+    margin: 0 0;
+    padding: 4vh 0;
+    text-align: center;
+    -webkit-user-select:none;
+    font-family: Menlo,Monaco,"Lucida Console","Courier New",Consolas,monospace;
+}
+
+.navBar {
+    position: fixed;
+    left: 0;
+    height: 89vh;
+    width: 12%;
+    padding: 5vh 0 5vh 0;
+    margin: 0.5vh 0 0 5px;
+}
+
+.wrapper {
+    display: inline-block;
+    width: 90%;
+    max-width: 1000px;
+    font-size: 1em;
+    margin-top: 2vh;
+    border: solid;
+    border-width: 1px;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.itemWindow {
+    overflow-y: auto;
+    max-height: 50vh;
+}
+
+.itemWindow::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: #e6f1f6;
+}
+
+.itemWindow::-webkit-scrollbar-thumb
+{
+    background-color: gray;
+}
+
+.item {
+    display: inline-block;
+    width: 98%;
+    text-align: left;
+    word-wrap: break-word;
+    border-top: solid;
+    border-top-width: thin;
+    padding: 0.5vh 1%;
+}
+
+.item:hover {
+    background-color: #faf1fa;
+}
+
+.file {
+    display: inline-block;
+}
+
+.folder {
+    background-color: #e6f1f6;
+}
+
+.videoPlayer {
+    border: none;
+}
+
+.share {
+    border-top: solid;
+    border-top-width: thin;
+}
+
+.shareName {
+    text-align: left;
+    display: inline-block;
+    width: 30%;
+}
+
+.sharePath {
+    text-align: left;
+    display: inline-block;
+    width: 60%;
+}
+
+.removeShareButton {
+    display: inline-block;
+    max-width: 2%;
+}
+
+.button {
+    display: inline-block;
+}
+
+.button::after {
+    content: ' |';
+}
+
+input[type="text"] {
+    border: none;
+    font-size: 1em;
+    font-family: Menlo,Monaco,"Lucida Console","Courier New",Consolas,monospace;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.clearFix {
+    clear: both;
+}

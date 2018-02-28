@@ -1,0 +1,62 @@
+<html ng-app="fileServer">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="public/stylesheets/style.css">
+		<script src="public/javascripts/lib/angular.min.js"></script>
+		<script src="public/javascripts/lib/angular-route.min.js"></script>
+		<script src="public/javascripts/FileServer.js"></script>
+	</head>
+
+	<body ng-controller="listController">
+		<div 
+			class="wrapper videoPlayer"
+			ng-show="showPlayer==true">
+			<video controls autoplay id="videoPlayer" width="100%">
+				<source type="video">
+				<track label="English" kind="subtitles" srclang="en" ng-src="{{subtitleSource}}">
+			</video>
+		</div>
+
+		<div class="wrapper itemWindow">
+			<div
+				class="item folder"
+				ng-repeat="folder in folders"
+				ng-click="folderClick(folder)">
+				{{folder.name}}
+			</div>
+
+			<div 
+				class="item file"
+				ng-click="fileClick(file)"
+				ng-repeat="file in files">
+				{{file.name}}
+			</div>
+		</div>
+
+		<div 
+			class="wrapper"
+			ng-show="local==true">
+			<div 
+				class="item" 
+				ng-click="shareWindow()">
+				Edit Share
+			</div>
+		</div>
+
+		<div class="wrapper" ng-show="showShareWindow==true">
+			<div 
+				class="share item"
+				ng-repeat="share in shares track by $index">
+				<input type="text" class="shareName" ng-model="share.name">
+				<input type="text" class="sharePath" ng-model="share.path">
+				<img class="removeShareButton" src="/public/images/remove.png" ng-click="shares.splice($index, 1)">
+			</div>
+			<div class="item">
+				<div class="button" ng-click="shares.push({name:'', path:''})">Add Share</div>
+				<div class="button" ng-click="updateShare()">Submit</div>
+			 </div>
+		</div>
+	</body>
+
+</html>
